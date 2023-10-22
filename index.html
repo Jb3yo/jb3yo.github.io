@@ -1,12 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const navItems = document.querySelectorAll(".navlink");
+
+        navItems.forEach(function (item) {
+            item.addEventListener("click", function () {
+                // Remove the "active" class from all nav items
+                navItems.forEach(function (navItem) {
+                    navItem.classList.remove("active");
+                });
+
+                // Add the "active" class to the clicked nav item
+                item.classList.add("active");
+            });
+        });
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const navLinks = document.querySelectorAll(".navbar a");
+
+        navLinks.forEach(function (link) {
+            link.addEventListener("click", function (event) {
+                event.preventDefault();
+
+                const targetId = link.getAttribute("href").substring(1);
+                const targetElement = document.getElementById(targetId);
+
+                if (targetElement) {
+                    const offset = 90; // Adjust this value as needed
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+                    const scrollToPosition = targetPosition - offset;
+
+                    window.scrollTo({
+                        top: scrollToPosition,
+                        behavior: "smooth",
+                    });
+                }
+            });
+        });
+    });
+</script>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Jayden Brickell - Full Stack Developer</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <h1>Hello World!</h1>
-    <p>Tetsing commit</p>
+
+<body style="margin: 0">
+    <header>
+
+        <nav class="navbar">
+            <a href="#cover-hero"><p class="name">💻</p></a>
+            <ul class="horizontal">
+                <li><a href="#about" class="navlink">About</a></li>
+                <li><a href="#skills" class="navlink">Skills</a></li>
+                <li><a href="#projects" class="navlink">Projects</a></li>
+                <li><a href="#experience" class="navlink">Experience</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="cover-hero" class="cover-hero">
+        <!-- left = tagline and CTA, right = Image selfie, far right = social icon links-->
+        <img src="New Project.png" alt="" class="pp">
+        <div class="hero-box">
+            <h1>I'm <span style="color: #32c9ef;">Jayden Brickell</span>
+                <br>
+                Java Developer & React
+                <br>
+                Develpoer Consultant
+            </h1>
+            <a href="mailto:jaydenbrickell@hotmail.com">
+                <button class="CTA">Get in touch</button></a>
+        </div>
+        <div class="socials">
+            <a href="https://www.discord.com/"><img src="icons8-discord-new-100.png" alt=""></a>
+            <a href=""><img src="icons8-github-100.png" alt=""></a>
+            <a href=""><img src="icons8-twitterx-100.png" alt=""></a>
+            <a href=""><img src="icons8-linkedin-100.png" alt=""></a>
+        </div>
+    </section>
+
+    <section id="about" class="about container"> <!-- about me para centred-->
+        <h2 class="underline">About</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+            magna aliqua. Mi bibendum neque egestas congue quisque egestas diam in. Molestie ac feugiat sed lectus.
+            Magnis dis parturient montes nascetur. Eget sit amet tellus cras adipiscing enim. Elit scelerisque mauris
+            pellentesque pulvinar pellentesque habitant morbi. Tempor orci eu lobortis elementum nibh tellus molestie.
+            Venenatis lectus magna fringilla urna porttitor. Mattis rhoncus urna neque viverra justo nec. Nisl
+            condimentum id venenatis a condimentum vitae. Vel risus commodo viverra maecenas accumsan lacus vel
+            facilisis volutpat. Posuere morbi leo urna molestie at elementum eu facilisis. Scelerisque mauris
+            pellentesque pulvinar pellentesque habitant morbi. Orci nulla pellentesque dignissim enim sit. Turpis cursus
+            in hac habitasse platea dictumst. Aliquam malesuada bibendum arcu vitae elementum curabitur vitae nunc sed.
+            Et egestas quis ipsum suspendisse ultrices gravida dictum. Amet cursus sit amet dictum sit. Ornare
+            suspendisse sed nisi lacus.
+            <br> <br>
+            Vulputate odio ut enim blandit volutpat. Suspendisse sed nisi lacus sed viverra. Arcu bibendum at varius
+            vel. Lobortis mattis aliquam faucibus purus in massa tempor. Tellus id interdum velit laoreet id. Tincidunt
+            praesent semper feugiat nibh sed pulvinar proin. Elementum pulvinar etiam non quam lacus. Nam libero justo
+            laoreet sit. Eget nunc scelerisque viverra mauris. Sem fringilla ut morbi tincidunt. Sem integer vitae justo
+            eget magna fermentum iaculis eu non. Gravida cum sociis natoque penatibus et magnis dis parturient montes.
+            Ac ut consequat semper viverra. Pharetra pharetra massa massa ultricies. Id interdum velit laoreet id donec.
+            Auctor eu augue ut lectus arcu bibendum. Aliquet nec ullamcorper sit amet risus nullam eget felis eget. Enim
+            praesent elementum facilisis leo vel fringilla est.
+        </p>
+    </section>
+
+    <section id="skills" class="skills">
+        <div class="center-2">
+            <h2 class="centered-h2 underline">My Skills</h2>
+        </div>
+        <div class="container ofcards">
+            <div class="card-grid">
+                <div class="card 1">
+                    <img src="icons8-react-400.png" alt="">
+                    <p>React</p>
+                </div>
+                <div class="card 1">
+                    <img src="icons8-java-logo-500.png" alt="">
+                    <p>Java</p>
+                </div>
+                <div class="card 1">
+                    <img src="icons8-html-5-400.png" alt="">
+                    <p>HTML</p>
+                </div>
+                <div class="card 1">
+                    <img src="icons8-css-logo-400.png" alt="">
+                    <p>CSS</p>
+                </div>
+                <div class="card 1">
+                    <img src="icons8-microsoft-office-2019-400.png" alt="">
+                    <p>M365 Office</p>
+                </div>
+                <div class="card 1">
+                    <img src="icons8-oracle-pl-sql-400.png" alt="">
+                    <p>SQL</p>
+                </div>
+                <div class="card 1">
+                    <img src="icons8-docker-logo-400.png" alt="">
+                    <p>Docker</p>
+                </div>
+                <div class="card 1">
+                    <img src="icons8-aws-logo-400.png" alt="">
+                    <p>AWS</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects"> <!-- box grid of past projects-->
+    <h2>Protfolio</h2>
+    </section>
+
+    <section id="experience" class="experience"> <!-- box grid of past experience-->
+    <h2>Experience</h2>
+    </section>
+
+    <footer>
+        <div class="">
+            <p>2023 &copy; Jayden Brickell</p>
+        </div>
+    </footer>
 </body>
+
 </html>
